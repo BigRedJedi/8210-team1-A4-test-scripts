@@ -57,7 +57,8 @@ class Blog_ATS(unittest.TestCase):
        elem = driver.find_element_by_id("id_cell_phone")
        elem.send_keys(phone)
        time.sleep(5)
-       elem = driver.find_element_by_xpath("//*[@id='app-layout']/div/div/div/form/button").click()
+       # elem = driver.find_element_by_xpath("//*[@id='app-layout']/div/div/div/form/button").click()
+       elem = driver.find_element_by_xpath("//*[@id='app-layout']/div/div/div/div/div/div/div/div/form/div[9]/div/button").click()
        time.sleep(10)
        assert "Added New Donor"
 
@@ -92,7 +93,8 @@ class Blog_ATS(unittest.TestCase):
        elem = driver.find_element_by_id("id_email")
        elem.send_keys(email2)
        time.sleep(5)
-       elem = driver.find_element_by_xpath("//*[@id='app-layout']/div/div/div/form/button").click()
+       # elem = driver.find_element_by_xpath("//*[@id='app-layout']/div/div/div/form/button").click()
+       elem = driver.find_element_by_xpath("//*[@id='app-layout']/div/div/div/div/div/div/div/div/form/div[9]/div/button").click()
        time.sleep(10)
        assert "Edited Existing Donor"
 
