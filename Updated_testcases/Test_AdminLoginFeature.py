@@ -7,7 +7,8 @@ from selenium.webdriver.common.keys import Keys
 class test_AdminLogin(unittest.TestCase):
 
    def setUp(self):
-       self.driver = webdriver.Chrome("C:\\chromedriver.exe")
+       #self.driver = webdriver.Chrome("C:\\chromedriver.exe")
+       self.driver = webdriver.Chrome()
 
    def test_AdminLogin(self):
        user = "instructor"
