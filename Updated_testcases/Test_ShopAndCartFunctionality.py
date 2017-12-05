@@ -23,15 +23,12 @@ class test_EmployeeLogin(unittest.TestCase):
        time.sleep(2)
        driver.find_element_by_link_text("Shop").click()
        time.sleep(2)
-       driver.find_element_by_link_text("Bagel").click()
+       driver.find_element_by_xpath("//*[@id='app-layout']/div/div/div/div[2]/div/div/div/div/div[2]/div/div/p/a").click()
        time.sleep(2)
-
-       driver.find_element_by_xpath("//*[@id='app-layout']/div/div/div/div/form/input[3]").click()
+       driver.find_element_by_xpath("//*[@id='app-layout']/div/div/div/div/div/div/form/div[3]/div/button").click()
        time.sleep(2)
-
-       driver.find_element_by_link_text("Checkout").click()
+       driver.find_element_by_xpath("//*[@id='app-layout']/div/div/div/ul/li[2]/a").click()
        time.sleep(2)
-
        visit = "1"
        first_name = "Pooja"
        last_name = "Yalala"
@@ -60,7 +57,7 @@ class test_EmployeeLogin(unittest.TestCase):
        elem = driver.find_element_by_id("id_city")
        elem.send_keys(city)
        time.sleep(2)
-       elem = driver.find_element_by_xpath("//*[@id='app-layout']/div/div/div/form/p[8]/input").click()
+       driver.find_element_by_xpath("//*[@id='app-layout']/div/div/div/div/div/div/div/div/form/div[8]/div/button").click()
        time.sleep(5)
        assert "order placed"
        time.sleep(5)
