@@ -7,8 +7,7 @@ from selenium.webdriver.common.keys import Keys
 class test_AdminLogin(unittest.TestCase):
 
    def setUp(self):
-       # self.driver = webdriver.Chrome("C:\\chromedriver.exe")
-       self.driver = webdriver.Chrome()
+       self.driver = webdriver.Chrome("C:\\chromedriver.exe")
 
    def test_AdminLogin(self):
        user = "instructor"
@@ -24,15 +23,14 @@ class test_AdminLogin(unittest.TestCase):
        assert "Logged In"
        driver.find_element_by_xpath("//*[@id='content-main']/div[2]/table/tbody/tr/th/a").click()
        driver.find_element_by_xpath("//*[@id='result_list']/tbody/tr[1]/td[12]/a").click()
-       driver.find_element_by_xpath("//*[@id='content']/ul/li/a").click()
-       driver.find_element_by_xpath("//*[@id='print-header']/div/button[1]").click()
-       assert "Printed Receipt Successfully"
-       time.sleep(5)
-
+       assert "Receipt can be printed from here"
+       time.sleep(2)
 
    def tearDown(self):
        self.driver.close()
 
-if __name__ == "__main__":
-   unittest.main()
+       if __name__ == "__main__":
+           unittest.main()
+
+
 
