@@ -15,20 +15,20 @@ class Blog_ATS(unittest.TestCase):
 
 # Test Script 1 - Add New Donor
    def test_blog(self):
-       user = "test"
-       pwd = "test1234"
+       user = "instructor"
+       pwd = "instructor1a"
        driver = self.driver
        driver.maximize_window()
-       driver.get("http://127.0.0.1:8000/portfolio/login/?next=/")
+       driver.get("https://gs-food-pantry.herokuapp.com/portfolio/login/")
        elem = driver.find_element_by_id("id_username")
        elem.send_keys(user)
        elem = driver.find_element_by_id("id_password")
        elem.send_keys(pwd)
        elem.send_keys(Keys.RETURN)
-       driver.get("http://127.0.0.1:8000")
+       driver.get("https://gs-food-pantry.herokuapp.com")
        assert "Logged In"
        time.sleep(5)
-       driver.get("http://127.0.0.1:8000/donor/")
+       driver.get("https://gs-food-pantry.herokuapp.com/donor/")
        time.sleep(5)
        elem = driver.find_element_by_xpath("//*[@id='app-layout']/div/div/div/div/div[3]/div/a/span").click()
        time.sleep(5)
@@ -64,7 +64,7 @@ class Blog_ATS(unittest.TestCase):
 
 
        # Test Script 2 - Edit Existing Donor
-       driver.get("http://127.0.0.1:8000/donor/")
+       driver.get("https://gs-food-pantry.herokuapp.com/donor/")
        elem = driver.find_element_by_xpath("//*[@id='userTbl']/tbody/tr[2]/td[9]/a").click()
        time.sleep(5)
        name2 = "Jeffrey Smith"

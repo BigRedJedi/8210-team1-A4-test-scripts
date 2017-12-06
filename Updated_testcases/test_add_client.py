@@ -16,17 +16,17 @@ class GS_Test(unittest.TestCase):
        pwd = "instructor1a"
        driver = self.driver
        driver.maximize_window()
-       driver.get("http://127.0.0.1:8000/portfolio/login/?next=/")
+       driver.get("http://gs-food-pantry.herokuapp.com/portfolio/login/?next=/")
        elem = driver.find_element_by_id("id_username")
        elem.send_keys(user)
        elem = driver.find_element_by_id("id_password")
        elem.send_keys(pwd)
        time.sleep(4)
        elem.send_keys(Keys.RETURN)
-       driver.get("http://127.0.0.1:8000")
+       driver.get("http://gs-food-pantry.herokuapp.com/")
        assert "Logged In"
        time.sleep(5)
-       driver.get("http://127.0.0.1:8000/client/")
+       driver.get("http://gs-food-pantry.herokuapp.com/client/")
        time.sleep(10)
        elem = driver.find_element_by_xpath("//*[@id='app-layout']/div/div/div/div[3]/div/a").click()
        time.sleep(10)

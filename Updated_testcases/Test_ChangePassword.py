@@ -15,7 +15,7 @@ class test_EmployeeLogin(unittest.TestCase):
        pwd = "test@1234"
        driver = self.driver
        driver.maximize_window()
-       driver.get("http://127.0.0.1:8000/portfolio/login/?next=/")
+       driver.get("http://gs-food-pantry.herokuapp.com/portfolio/login/?next=/")
        elem = driver.find_element_by_id("id_username")
        elem.send_keys(user)
        elem = driver.find_element_by_id("id_password")

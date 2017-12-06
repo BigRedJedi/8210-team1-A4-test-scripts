@@ -15,7 +15,7 @@ class test_AdminLogin(unittest.TestCase):
        pwd = "instructor1a"
        driver = self.driver
        driver.maximize_window()
-       driver.get("http://127.0.0.1:8000/admin")
+       driver.get("http://gs-food-pantry.herokuapp.com/admin")
        elem = driver.find_element_by_id("id_username")
        elem.send_keys(user)
        elem = driver.find_element_by_id("id_password")
@@ -26,8 +26,9 @@ class test_AdminLogin(unittest.TestCase):
        driver.find_element_by_xpath("//*[@id='result_list']/tbody/tr[1]/td[12]/a").click()
        driver.find_element_by_xpath("//*[@id='content']/ul/li/a").click()
        driver.find_element_by_xpath("//*[@id='print-header']/div/button[1]").click()
-       assert " Printed Receipt Successfully"
+       assert "Printed Receipt Successfully"
        time.sleep(5)
+
 
    def tearDown(self):
        self.driver.close()
